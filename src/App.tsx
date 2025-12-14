@@ -9,10 +9,26 @@ function App() {
 
     return (
         <>
-            <div className="p-8">
-                <Button>It works!</Button>
-                <Button variant="purple">Outline</Button>
-            </div>
+            <header>
+                <div>logo</div>
+                <div>switch</div>
+            </header>
+            <main>
+                <section>
+                    <h1 className="heading-1">
+                        Welcome to the <span>Frontend Quiz!</span>
+                    </h1>
+                    <h2 className="subheading">
+                        Pick a subject to get started.
+                    </h2>
+                </section>
+                <section className="catagories">
+                    <Button>HTML</Button>
+                    <Button>CSS</Button>
+                    <Button>Javascript</Button>
+                    <Button>Accessibility</Button>
+                </section>
+            </main>
             {/*<div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
