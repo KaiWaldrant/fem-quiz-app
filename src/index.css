@@ -1,3 +1,19 @@
+@font-face {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 300 400 500;
+    src: url("assets/fonts/Rubik-VariableFont_wght.ttf")
+        format("truetype-variations");
+}
+
+@font-face {
+    font-family: "Rubik";
+    font-style: italic;
+    font-weight: 400;
+    src: url("assets/fonts/Rubik-Italic-VariableFont_wght.ttf")
+        format("truetype-variations");
+}
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -28,6 +44,57 @@
     --color-orange-500: hsl(22, 100%, 60%);
 
     --color-red-500: hsl(0, 82%, 63%);
+
+    --text-preset-1-mobile: 5.5rem;
+    --text-preset-1-mobile--font-weight: 500;
+
+    --text-preset-2-medium-mobile: 2.5rem;
+    --text-preset-2-medium-mobile--font-weight: 500;
+
+    --text-preset-2-light-mobile: 2.5rem;
+    --text-preset-2-light-mobile--font-weight: 300;
+
+    --text-preset-3-mobile: 1.25rem;
+    --text-preset-3-mobile--line-height: 120%;
+    --text-preset-3-mobile--font-weight: 500;
+
+    --text-preset-4-mobile: 1.125rem;
+    --text-preset-4-mobile--font-weight: 500;
+
+    --text-preset-5-mobile: 0.875rem;
+    --text-preset-5-mobile--line-height: 150%;
+
+    --text-preset-1: 9rem;
+    --text-preset-1--font-weight: 500;
+
+    --text-preset-2-medium: 4rem;
+    --text-preset-1-medium--font-weight: 500;
+
+    --text-preset-2-light: 4rem;
+    --text-preset-1-light--font-weight: 300;
+
+    --text-preset-3: 2.25rem;
+    --text-preset-3--line-height: 120%;
+    --text-preset-3--font-weight: 500;
+
+    --text-preset-4: 1.75rem;
+    --text-preset-4--font-weight: 500;
+
+    --text-preset-5-medium: 1.5rem;
+    --text-preset-5-medium--line-height: 150%;
+    --text-preset-5-medium--font-weight: 500;
+
+    --text-preset-5-regular: 1.5rem;
+    --text-preset-5-regular--line-height: 150%;
+
+    --text-preset-6: 1.125rem;
+    --text-preset-6--line-height: 150%;
+}
+
+@layer base {
+    html {
+        font-family: "Rubik", sans-serif;
+    }
 }
 
 .bg-primary {
