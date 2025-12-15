@@ -2,54 +2,45 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import "./App.css";
-import { Button } from "@/components/ui/button";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { Home } from "@/routes/home";
+import { Questions } from "@/routes/questions";
+import { Layout } from "./layout";
 
 function App() {
     // const [count, setCount] = useState(0)
 
     return (
-        <>
-            <header>
-                <div>logo</div>
-                <div>switch</div>
-            </header>
-            <main>
-                <section>
-                    <h1 className="heading-1">
-                        Welcome to the <span>Frontend Quiz!</span>
-                    </h1>
-                    <h2 className="subheading">
-                        Pick a subject to get started.
-                    </h2>
-                </section>
-                <section className="catagories">
-                    <Button>HTML</Button>
-                    <Button>CSS</Button>
-                    <Button>Javascript</Button>
-                    <Button>Accessibility</Button>
-                </section>
-            </main>
-            {/*<div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>*/}
-        </>
+        <Router>
+            <Routes>
+                <Route element={<Layout />}>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/questions" element={<Questions />} />
+                </Route>
+            </Routes>
+        </Router>
+        //   <>
+        //       {/*<div>
+        //   <a href="https://vite.dev" target="_blank">
+        //     <img src={viteLogo} className="logo" alt="Vite logo" />
+        //   </a>
+        //   <a href="https://react.dev" target="_blank">
+        //     <img src={reactLogo} className="logo react" alt="React logo" />
+        //   </a>
+        // </div>
+        // <h1>Vite + React</h1>
+        // <div className="card">
+        //   <button onClick={() => setCount((count) => count + 1)}>
+        //     count is {count}
+        //   </button>
+        //   <p>
+        //     Edit <code>src/App.tsx</code> and save to test HMR
+        //   </p>
+        // </div>
+        // <p className="read-the-docs">
+        //   Click on the Vite and React logos to learn more
+        // </p>*/}
+        // </>
     );
 }
 
