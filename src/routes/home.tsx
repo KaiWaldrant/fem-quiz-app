@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { IconButton } from "@/components/icon-button";
 import { IconAccessibility } from "@/components/icons/icon-accessibility";
 
 export function Home() {
@@ -16,18 +16,17 @@ export function Home() {
                 </h2>
             </section>
             <section className="grid gap-4">
-                <Button className="p-4 text-preset-4-mobile">HTML</Button>
-                <Button>CSS</Button>
-                <Button>Javascript</Button>
-                <Button>
-                    <div className="bg-purple-100 rounded-md size-10 flex justify-center">
-                        <IconAccessibility
-                            className="stroke-purple-600 self-center"
-                            size="28.57px"
-                        />
-                    </div>{" "}
+                <IconButton>HTML</IconButton>
+                <IconButton>CSS</IconButton>
+                <IconButton>Javascript</IconButton>
+                <IconButton
+                    containerClassName="bg-purple-100 size-10"
+                    icon={IconAccessibility}
+                    iconClassName="stroke-purple-600"
+                    iconSize="28.75px"
+                >
                     Accessibility
-                </Button>
+                </IconButton>
             </section>
         </>
     );

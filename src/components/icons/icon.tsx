@@ -11,7 +11,7 @@ export function Icon({
     className,
     children,
     stroke = "currentColor",
-    strokeWidth = 2,
+    strokeWidth = 0,
     strokeLinecap = "round",
     strokeLinejoin = "round",
     ...props
