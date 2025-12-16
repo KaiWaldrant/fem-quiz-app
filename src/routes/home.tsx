@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { IconAccessibility } from "@/components/icons/icon-accessibility";
 
 export function Home() {
     return (
@@ -18,7 +19,15 @@ export function Home() {
                 <Button className="p-4 text-preset-4-mobile">HTML</Button>
                 <Button>CSS</Button>
                 <Button>Javascript</Button>
-                <Button>Accessibility</Button>
+                <Button>
+                    <div className="bg-purple-100 rounded-md size-10 flex justify-center">
+                        <IconAccessibility
+                            className="stroke-purple-600 self-center"
+                            size="28.57px"
+                        />
+                    </div>{" "}
+                    Accessibility
+                </Button>
             </section>
         </>
     );

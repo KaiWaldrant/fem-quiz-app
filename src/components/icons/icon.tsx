@@ -7,11 +7,9 @@ export interface IconProps extends SVGProps<SVGSVGElement> {
 }
 
 export function Icon({
-    size = 24,
+    size,
     className,
     children,
-    viewBox = "0 0 24 24",
-    fill = "none",
     stroke = "currentColor",
     strokeWidth = 2,
     strokeLinecap = "round",
@@ -22,13 +20,11 @@ export function Icon({
         <svg
             width={size}
             height={size}
-            viewBox={viewBox}
-            fill={fill}
             stroke={stroke}
             strokeWidth={strokeWidth}
             strokeLinecap={strokeLinecap}
             strokeLinejoin={strokeLinejoin}
-            className={cn("size-4", className)}
+            className={cn(className)}
             {...props}
         >
             {children}
