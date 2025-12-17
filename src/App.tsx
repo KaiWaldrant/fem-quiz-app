@@ -6,19 +6,22 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { Home } from "@/routes/home";
 import { Questions } from "@/routes/questions";
 import { Layout } from "./layout";
+import { ThemeProvider } from "@/components/theme-provider";
 
 function App() {
     // const [count, setCount] = useState(0)
 
     return (
-        <Router>
-            <Routes>
-                <Route element={<Layout />}>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/questions" element={<Questions />} />
-                </Route>
-            </Routes>
-        </Router>
+        <ThemeProvider defaultTheme="system" storageKey="quiz-theme">
+            <Router>
+                <Routes>
+                    <Route element={<Layout />}>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/questions" element={<Questions />} />
+                    </Route>
+                </Routes>
+            </Router>
+        </ThemeProvider>
         //   <>
         //       {/*<div>
         //   <a href="https://vite.dev" target="_blank">

@@ -1,7 +1,7 @@
 import type { SVGProps } from "react";
 import { cn } from "@/lib/utils";
 
-export function bgTablet({
+export function BgTablet({
     className,
     stroke = "currentColor",
 }: SVGProps<SVGSVGElement>) {
