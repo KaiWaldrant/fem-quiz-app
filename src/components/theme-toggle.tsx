@@ -9,7 +9,7 @@ export function ThemeToggle() {
 
     return (
         <div className="flex gap-2">
-            <IconSun className="size-4 dark:fill-white : fill-grey-500 }" />
+            <IconSun className="size-4 dark:fill-white  fill-grey-500 }" />
 
             <Switch
                 checked={isDark}
