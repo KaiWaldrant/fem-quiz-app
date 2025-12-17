@@ -8,7 +8,7 @@ export function ThemeToggle() {
     const isDark = theme === "dark";
 
     return (
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center">
             <IconSun className="size-4 dark:fill-white  fill-grey-500 }" />
 
             <Switch
