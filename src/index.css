@@ -97,6 +97,38 @@
     }
 }
 
+.bg-svg {
+    background-image: url("assets/images/pattern-background-mobile-light.svg");
+    background-repeat: no-repeat;
+}
+
+:root[data-them="dark"] .bg-svg,
+.dark .bg-svg {
+    background-image: url("assets/images/pattern-background-mobile-dark.svg");
+}
+
+@media (min-width: 768px) {
+    .bg-svg {
+        background-image: url("assets/images/pattern-background-tablet-light.svg");
+    }
+
+    :root[data-them="dark"] .bg-svg,
+    .dark .bg-svg {
+        background-image: url("assets/images/pattern-background-tablet-dark.svg");
+    }
+}
+
+@media (min-width: 1440px) {
+    .bg-svg {
+        background-image: url("assets/images/pattern-background-desktop-light.svg");
+    }
+
+    :root[data-them="dark"] .bg-svg,
+    .dark .bg-svg {
+        background-image: url("assets/images/pattern-background-desktop-dark.svg");
+    }
+}
+
 .bg-primary {
     background-color: var(--color-grey-50);
     background-image: url("assets/images/pattern-background-desktop-light.svg");
