@@ -1,5 +1,8 @@
 import { IconButton } from "@/components/icon-button";
 import { IconAccessibility } from "@/components/icons/icon-accessibility";
+import { IconCSS } from "@/components/icons/icon-css";
+import { IconHTML } from "@/components/icons/icon-html";
+import { IconJs } from "@/components/icons/icon-js";
 
 export function Home() {
     return (
@@ -16,14 +19,35 @@ export function Home() {
                 </h2>
             </section>
             <section className="grid gap-4">
-                <IconButton>HTML</IconButton>
-                <IconButton>CSS</IconButton>
-                <IconButton>Javascript</IconButton>
+                <IconButton
+                    containerClassName="bg-orange-50 size-10"
+                    icon={IconHTML}
+                    iconClassName="fill-orange-400"
+                    iconSize="28.57px"
+                >
+                    HTML
+                </IconButton>
+                <IconButton
+                    containerClassName="bg-green-100 size-10"
+                    icon={IconCSS}
+                    iconClassName="fill-green-500"
+                    iconSize="28.57px"
+                >
+                    CSS
+                </IconButton>
+                <IconButton
+                    containerClassName="bg-blue-50 size-10"
+                    icon={IconJs}
+                    iconClassName="fill-blue-500"
+                    iconSize="28.57px"
+                >
+                    Javascript
+                </IconButton>
                 <IconButton
                     containerClassName="bg-purple-100 size-10"
                     icon={IconAccessibility}
-                    iconClassName="stroke-purple-600"
-                    iconSize="28.75px"
+                    iconClassName="fill-purple-600"
+                    iconSize="28.57px"
                 >
                     Accessibility
                 </IconButton>
