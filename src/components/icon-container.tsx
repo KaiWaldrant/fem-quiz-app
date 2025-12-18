@@ -52,7 +52,7 @@ export function IconContainer({
             {text && (
                 <span
                     className={cn(
-                        "text-preset-4-mobile md:text-preset-4",
+                        "preset-4-mobile md:text-preset4",
                         textClassName,
                     )}
                 >

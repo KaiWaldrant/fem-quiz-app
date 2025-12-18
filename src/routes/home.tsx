@@ -8,13 +8,13 @@ export function Home() {
     return (
         <>
             <section className="grid gap-4">
-                <h1 className=" text-preset-2-light-mobile">
+                <h1 className=" preset-2-light-mobile">
                     Welcome to the{" "}
-                    <span className="text-preset-2-medium-mobile">
+                    <span className="preset-2-medium-mobile">
                         Frontend Quiz!
                     </span>
                 </h1>
-                <h2 className="text-preset-5-mobile italic text-grey-500 dark:text-blue-300">
+                <h2 className="preset-5-mobile italic text-grey-500 dark:text-blue-300">
                     Pick a subject to get started.
                 </h2>
             </section>

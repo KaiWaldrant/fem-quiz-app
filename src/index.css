@@ -44,51 +44,6 @@
     --color-orange-500: hsl(22, 100%, 60%);
 
     --color-red-500: hsl(0, 82%, 63%);
-
-    --text-preset-1-mobile: 5.5rem;
-    --text-preset-1-mobile--font-weight: 500;
-
-    --text-preset-2-medium-mobile: 2.5rem;
-    --text-preset-2-medium-mobile--font-weight: 500;
-
-    --text-preset-2-light-mobile: 2.5rem;
-    --text-preset-2-light-mobile--font-weight: 300;
-
-    --text-preset-3-mobile: 1.25rem;
-    --text-preset-3-mobile--line-height: 120%;
-    --text-preset-3-mobile--font-weight: 500;
-
-    --text-preset-4-mobile: 1.125rem;
-    --text-preset-4-mobile--font-weight: 500;
-
-    --text-preset-5-mobile: 0.875rem;
-    --text-preset-5-mobile--line-height: 150%;
-
-    --text-preset-1: 9rem;
-    --text-preset-1--font-weight: 500;
-
-    --text-preset-2-medium: 4rem;
-    --text-preset-1-medium--font-weight: 500;
-
-    --text-preset-2-light: 4rem;
-    --text-preset-1-light--font-weight: 300;
-
-    --text-preset-3: 2.25rem;
-    --text-preset-3--line-height: 120%;
-    --text-preset-3--font-weight: 500;
-
-    --text-preset-4: 1.75rem;
-    --text-preset-4--font-weight: 500;
-
-    --text-preset-5-medium: 1.5rem;
-    --text-preset-5-medium--line-height: 150%;
-    --text-preset-5-medium--font-weight: 500;
-
-    --text-preset-5-regular: 1.5rem;
-    --text-preset-5-regular--line-height: 150%;
-
-    --text-preset-6: 1.125rem;
-    --text-preset-6--line-height: 150%;
 }
 
 @layer base {
@@ -131,4 +86,79 @@
 
 button {
     cursor: pointer;
+}
+
+/*limitation with tailwind merge and by extension cn from shadcn*/
+
+@utility preset-1-mobile {
+    font-size: 5.5rem;
+    font-weight: 500;
+}
+
+@utility preset-2-medium-mobile {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+@utility preset-2-light-mobile {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+@utility preset-3-mobile {
+    font-size: 1.25rem;
+    line-height: 120%;
+    font-weight: 500;
+}
+
+@utility preset-4-mobile {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+@utility preset-5-mobile {
+    font-size: 0.875rem;
+    line-height: 150%;
+}
+
+@utility preset-1 {
+    font-size: 9rem;
+    font-weight: 500;
+}
+
+@utility preset-2-medium {
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+@utility preset-2-light {
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+@utility preset-3 {
+    font-size: 2.25rem;
+    line-height: 120%;
+    font-weight: 500;
+}
+
+@utility preset-4 {
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+@utility preset-5-medium {
+    font-size: 1.5rem;
+    line-height: 150%;
+    font-weight: 500;
+}
+
+@utility preset-5-regular {
+    font-size: 1.5rem;
+    line-height: 150%;
+}
+
+@utility preset-6 {
+    font-size: 1.125rem;
+    line-height: 150%;
 }

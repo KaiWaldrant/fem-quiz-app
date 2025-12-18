@@ -5,13 +5,14 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-    "inline-flex items-center gap-2 whitespace-nowrap rounded-md shrink-0 [&_svg]:shrink-0 outline-none  aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-white text-blue-900 dark:bg-blue-850 dark:text-white",
+    "inline-flex items-center gap-2 whitespace-nowrap preset-4-mobile rounded-md shrink-0 outline-none  aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive ",
     {
         variants: {
             variant: {
                 default:
                     "bg-white text-blue-900 dark:bg-blue-850 dark:text-white",
                 purple: "hover:border-3 focus-visible:border-3 hover:border-purple-600 focus-visible:border-purple-600",
+                submit: "text-white bg-purple-600",
                 // outline:
                 //   "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
                 // secondary:
@@ -54,7 +55,7 @@ function Button({
             type="button"
             data-variant={variant}
             data-size={size}
-            className={cn(buttonVariants({ variant, size, className }))}
+            className={cn(buttonVariants({ variant, size }), className)}
             {...props}
         />
     );
