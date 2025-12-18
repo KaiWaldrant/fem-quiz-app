@@ -129,14 +129,6 @@
     }
 }
 
-.bg-primary {
-    background-color: var(--color-grey-50);
-    background-image: url("assets/images/pattern-background-desktop-light.svg");
-}
-
-.dark {
-    &.bg-primary {
-        background-color: var(--color-blue-900);
-        background-image: url("assets/images/pattern-background-desktop-dark.svg");
-    }
+button {
+    cursor: pointer;
 }
