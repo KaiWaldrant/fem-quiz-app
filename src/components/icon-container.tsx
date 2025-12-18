@@ -14,7 +14,7 @@ interface IconContainerProps {
 }
 
 const variantStyles = {
-    default: "bg-grey-50, text-grey-500",
+    default: "bg-grey-50 text-grey-500",
     success: "bg-green-500 text-white dark:text-grey-500",
     error: "bg-red-500 text-white dark:text-grey-500",
 };

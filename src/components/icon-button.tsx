@@ -41,7 +41,7 @@ export function IconButton({
                 iconSize={iconSize}
                 iconClassName={iconClassName}
                 textClassName={textClassName}
-                containerClassName={containerClassName}
+                containerClassName={cn("size-10", containerClassName)}
                 variant={containerVariant}
                 rounded={containerRounded}
             />
