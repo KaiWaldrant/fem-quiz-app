@@ -162,3 +162,12 @@ button {
     font-size: 1.125rem;
     line-height: 150%;
 }
+
+@layer components {
+    .white-overlay {
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0.5)
+        );
+    }
+}
