@@ -15,8 +15,11 @@ export function Questions() {
                         WCAG 2.1 Level AA requirement for normal text?
                     </h2>
                 </div>
-                <div className="bg-white h-4 rounded-full px-1 flex items-center">
-                    <Progress className="bg-white" value={60} />
+                <div className="bg-white dark:bg-blue-850 h-4 rounded-full px-1 flex items-center">
+                    <Progress
+                        className="bg-white dark:bg-blue-850"
+                        value={60}
+                    />
                 </div>
             </section>
 
