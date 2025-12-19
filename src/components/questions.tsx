@@ -1,8 +1,18 @@
 import { IconButton } from "@/components/icon-button";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-export function Questions() {
+import type { Quiz } from "@/types/quiz";
+
+export function Questions({ quiz }: { quiz: Quiz }) {
+    const questions = quiz.questions;
+
+    const
+
+    const handleSubmit => () {
+
+
+    }
+
     return (
         <>
             <section className="grid gap-6">
@@ -31,6 +41,7 @@ export function Questions() {
                 <Button
                     variant={"submit"}
                     className="p-4 rounded-xl justify-center min-h-fit"
+                    onClick={handleSubmit}
                 >
                     Submit Answer
                 </Button>

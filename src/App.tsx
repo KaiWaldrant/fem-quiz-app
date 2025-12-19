@@ -1,26 +1,35 @@
-// import { useState } from "react";
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import "./App.css";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import { Home } from "@/routes/home";
-import { Questions } from "@/routes/questions";
+import { Home } from "@/components/home";
+import { Questions } from "@/components/questions";
 import { Layout } from "./layout";
 import { ThemeProvider } from "@/components/theme-provider";
 
+import { useState } from "react";
+
+import type { Quiz, QuizData } from "@/types/quiz";
+import quizData from "@/data/data.json";
+
 function App() {
-    // const [count, setCount] = useState(0)
+    const [selectedQuiz, setSelectedQuiz] = useState<Quiz | null>(null);
+
+    const handleCategorySelect = (category: string) => {
+        if (!quizData) return;
+        const quiz = quizData.quizzes.find((q) => q.title === category);
+        if (quiz) setSelectedQuiz(quiz);
+    };
 
     return (
         <ThemeProvider defaultTheme="system" storageKey="quiz-theme">
-            <Router>
-                <Routes>
-                    <Route element={<Layout />}>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/questions" element={<Questions />} />
-                    </Route>
-                </Routes>
-            </Router>
+            <div className="flex flex-col min-h-svh min-w-svw text-blue-900 dark:text-white bg-svg bg-grey-50 dark:bg-blue-900">
+                {!selectedQuiz ? (
+                    <Home onSelectQuiz={handleCategorySelect} />
+                ) : (
+                    <Questions
+                        quiz={selectedQuiz}
+                        onBack={() => setSelectedQuiz(null)}
+                    />
+                )}
+            </div>
         </ThemeProvider>
         //   <>
         //       {/*<div>
