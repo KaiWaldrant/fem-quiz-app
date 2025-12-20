@@ -4,10 +4,23 @@ import { LogoCSS } from "./logo/logo-css";
 import { LogoJS } from "./logo/logo-js";
 import { LogoAccessibility } from "./logo/logo-accessibility";
 
-export function Header() {
+type LogoType = "HTML" | "CSS" | "JavaScript" | "Accessibility";
+
+const LOGOS: Record<LogoType, React.ReactElement> = {
+    HTML: <LogoHTML />,
+    CSS: <LogoCSS />,
+    JavaScript: <LogoJS />,
+    Accessibility: <LogoAccessibility />,
+};
+
+interface HeaderProps {
+    logo?: LogoType;
+}
+
+export function Header({ logo }: HeaderProps) {
     return (
         <header className="flex justify-between px-6 py-4">
-            <LogoAccessibility />
+            {logo && LOGOS[logo]}
             <ThemeToggle />
         </header>
     );

@@ -51,7 +51,7 @@ export function Questions({ quiz }: { quiz: Quiz }) {
 
     return (
         <>
-            <Header />
+            <Header logo={quiz.title} />
             <main className="grid gap-10 px-6 py-8 ">
                 <section className="grid gap-6">
                     <div className="grid gap-4">
