@@ -10,7 +10,7 @@ interface IconButtonProps extends React.ComponentProps<"button"> {
     iconClassName?: string;
     textClassName?: string;
     containerClassName?: string;
-    containerVariant?: "default" | "success" | "error";
+    containerVariant?: "default" | "selected" | "success" | "error";
     containerRounded?: "sm" | "md" | "lg" | "full";
 }
 

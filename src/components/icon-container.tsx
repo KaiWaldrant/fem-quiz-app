@@ -15,8 +15,9 @@ interface IconContainerProps {
 
 const variantStyles = {
     default: "bg-grey-50 text-grey-500",
-    success: "bg-green-500 text-white dark:text-grey-500",
-    error: "bg-red-500 text-white dark:text-grey-500",
+    selected: "bg-purple-600 text-white",
+    success: "bg-green-500 text-white ",
+    error: "bg-red-500 text-white ",
 };
 
 const roundedStyles = {
