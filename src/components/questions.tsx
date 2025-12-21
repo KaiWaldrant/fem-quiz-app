@@ -29,6 +29,26 @@ export function Questions({ quiz }: { quiz: Quiz }) {
         setCountCorrect(isCorrect ? countCorrect + 1 : 0);
     };
 
+    const setButtonClass = (option: string) => {
+        return selectedAnswer === option && !isSubmitted
+            ? "border-purple-600"
+            : isSubmitted && isCorrect && selectedAnswer === option
+              ? "border-green-500"
+              : isSubmitted && selectedAnswer === option && !isCorrect
+                ? "border-red-500"
+                : "";
+    };
+
+    const setIconContainerVariant = (option: string) => {
+        return selectedAnswer === option && !isSubmitted
+            ? "selected"
+            : isSubmitted && isCorrect && selectedAnswer === option
+              ? "success"
+              : isSubmitted && selectedAnswer === option && !isCorrect
+                ? "error"
+                : "default";
+    };
+
     const showCorrect = (option: string) => {
         if (!isSubmitted) return undefined;
 
@@ -84,136 +104,40 @@ export function Questions({ quiz }: { quiz: Quiz }) {
 
                 <section className="grid gap-4">
                     <IconButton
-                        className={
-                            selectedAnswer === options[0] && !isSubmitted
-                                ? "border-purple-600"
-                                : isSubmitted &&
-                                    isCorrect &&
-                                    selectedAnswer === options[0]
-                                  ? "border-green-500"
-                                  : isSubmitted &&
-                                      selectedAnswer === options[0] &&
-                                      !isCorrect
-                                    ? "border-red-500"
-                                    : ""
-                        }
-                        containerVariant={
-                            selectedAnswer === options[0] && !isSubmitted
-                                ? "selected"
-                                : isSubmitted &&
-                                    isCorrect &&
-                                    selectedAnswer === options[0]
-                                  ? "success"
-                                  : isSubmitted &&
-                                      selectedAnswer === options[0] &&
-                                      !isCorrect
-                                    ? "error"
-                                    : "default"
-                        }
+                        className={setButtonClass(options[0])}
+                        containerVariant={setIconContainerVariant(options[0])}
                         correct={showCorrect(options[0])}
                         text="A"
                         onClick={() => setSelectedAnswer(options[0])}
                     >
-                        {options[0]}
+                        <div className="grow text-left">{options[0]}</div>
                     </IconButton>
                     <IconButton
-                        className={
-                            selectedAnswer === options[1] && !isSubmitted
-                                ? "border-purple-600"
-                                : isSubmitted &&
-                                    isCorrect &&
-                                    selectedAnswer === options[1]
-                                  ? "border-green-500"
-                                  : isSubmitted &&
-                                      selectedAnswer === options[1] &&
-                                      !isCorrect
-                                    ? "border-red-500"
-                                    : ""
-                        }
-                        containerVariant={
-                            selectedAnswer === options[1] && !isSubmitted
-                                ? "selected"
-                                : isSubmitted &&
-                                    isCorrect &&
-                                    selectedAnswer === options[1]
-                                  ? "success"
-                                  : isSubmitted &&
-                                      selectedAnswer === options[1] &&
-                                      !isCorrect
-                                    ? "error"
-                                    : "default"
-                        }
+                        className={setButtonClass(options[1])}
+                        containerVariant={setIconContainerVariant(options[1])}
                         correct={showCorrect(options[1])}
                         text="B"
                         onClick={() => setSelectedAnswer(options[1])}
                     >
-                        {currentQuestion.options[1]}
+                        <div className="grow text-left">{options[1]}</div>
                     </IconButton>
                     <IconButton
-                        className={
-                            selectedAnswer === options[2] && !isSubmitted
-                                ? "border-purple-600"
-                                : isSubmitted &&
-                                    isCorrect &&
-                                    selectedAnswer === options[2]
-                                  ? "border-green-500"
-                                  : isSubmitted &&
-                                      selectedAnswer === options[2] &&
-                                      !isCorrect
-                                    ? "border-red-500"
-                                    : ""
-                        }
-                        containerVariant={
-                            selectedAnswer === options[2] && !isSubmitted
-                                ? "selected"
-                                : isSubmitted &&
-                                    isCorrect &&
-                                    selectedAnswer === options[2]
-                                  ? "success"
-                                  : isSubmitted &&
-                                      selectedAnswer === options[2] &&
-                                      !isCorrect
-                                    ? "error"
-                                    : "default"
-                        }
+                        className={setButtonClass(options[2])}
+                        containerVariant={setIconContainerVariant(options[2])}
                         correct={showCorrect(options[2])}
                         text="C"
                         onClick={() => setSelectedAnswer(options[2])}
                     >
-                        {currentQuestion.options[2]}
+                        <div className="grow text-left">{options[2]}</div>
                     </IconButton>
                     <IconButton
-                        className={
-                            selectedAnswer === options[3] && !isSubmitted
-                                ? "border-purple-600"
-                                : isSubmitted &&
-                                    isCorrect &&
-                                    selectedAnswer === options[3]
-                                  ? "border-green-500"
-                                  : isSubmitted &&
-                                      selectedAnswer === options[3] &&
-                                      !isCorrect
-                                    ? "border-red-500"
-                                    : ""
-                        }
-                        containerVariant={
-                            selectedAnswer === options[3] && !isSubmitted
-                                ? "selected"
-                                : isSubmitted &&
-                                    isCorrect &&
-                                    selectedAnswer === options[3]
-                                  ? "success"
-                                  : isSubmitted &&
-                                      selectedAnswer === options[3] &&
-                                      !isCorrect
-                                    ? "error"
-                                    : "default"
-                        }
+                        className={setButtonClass(options[3])}
+                        containerVariant={setIconContainerVariant(options[3])}
                         correct={showCorrect(options[3])}
                         text="D"
                         onClick={() => setSelectedAnswer(options[3])}
                     >
-                        {currentQuestion.options[3]}
+                        <div className="grow text-left">{options[3]}</div>
                     </IconButton>
                     <Button
                         variant={"submit"}
