@@ -8,7 +8,7 @@ interface IconContainerProps {
     iconClassName?: string;
     textClassName?: string;
     containerClassName?: string;
-    variant?: "default" | "success" | "error";
+    variant?: "default" | "selected" | "success" | "error";
     rounded?: "sm" | "md" | "lg" | "full";
     children?: React.ReactNode;
 }

@@ -4,7 +4,7 @@ import { LogoCSS } from "./logo/logo-css";
 import { LogoJS } from "./logo/logo-js";
 import { LogoAccessibility } from "./logo/logo-accessibility";
 
-type LogoType = "HTML" | "CSS" | "JavaScript" | "Accessibility";
+export type LogoType = "HTML" | "CSS" | "JavaScript" | "Accessibility";
 
 const LOGOS: Record<LogoType, React.ReactElement> = {
     HTML: <LogoHTML />,

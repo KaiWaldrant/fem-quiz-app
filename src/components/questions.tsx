@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import type { Quiz } from "@/types/quiz";
 import { useState } from "react";
 import { IconError } from "@/components/icons/icon-error";
-import { Header } from "./header";
+import { Header, type LogoType } from "./header";
 
 export function Questions({ quiz }: { quiz: Quiz }) {
     const questions = quiz.questions;
@@ -51,7 +51,7 @@ export function Questions({ quiz }: { quiz: Quiz }) {
 
     return (
         <>
-            <Header logo={quiz.title} />
+            <Header logo={quiz.title as LogoType} />
             <main className="grid gap-10 px-6 py-8 ">
                 <section className="grid gap-6">
                     <div className="grid gap-4">
