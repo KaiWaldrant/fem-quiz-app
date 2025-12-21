@@ -29,6 +29,16 @@ export function Questions({ quiz }: { quiz: Quiz }) {
         setCountCorrect(isCorrect ? countCorrect + 1 : 0);
     };
 
+    const showCorrect = (option: string) => {
+        if (!isSubmitted) return undefined;
+
+        if (option === currentQuestion.answer) return true;
+        if (option === selectedAnswer && option !== currentQuestion.answer)
+            return false;
+
+        return undefined;
+    };
+
     const handleSubmit = () => {
         if (!selectedAnswer) {
             handleNotSelected();
@@ -100,6 +110,7 @@ export function Questions({ quiz }: { quiz: Quiz }) {
                                     ? "error"
                                     : "default"
                         }
+                        correct={showCorrect(options[0])}
                         text="A"
                         onClick={() => setSelectedAnswer(options[0])}
                     >
@@ -132,6 +143,7 @@ export function Questions({ quiz }: { quiz: Quiz }) {
                                     ? "error"
                                     : "default"
                         }
+                        correct={showCorrect(options[1])}
                         text="B"
                         onClick={() => setSelectedAnswer(options[1])}
                     >
@@ -164,6 +176,7 @@ export function Questions({ quiz }: { quiz: Quiz }) {
                                     ? "error"
                                     : "default"
                         }
+                        correct={showCorrect(options[2])}
                         text="C"
                         onClick={() => setSelectedAnswer(options[2])}
                     >
@@ -196,6 +209,7 @@ export function Questions({ quiz }: { quiz: Quiz }) {
                                     ? "error"
                                     : "default"
                         }
+                        correct={showCorrect(options[3])}
                         text="D"
                         onClick={() => setSelectedAnswer(options[3])}
                     >

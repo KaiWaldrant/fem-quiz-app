@@ -2,6 +2,8 @@ import { IconContainer } from "./icon-container";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { type IconProps } from "./icons/icon";
+import { IconIncorrect } from "./icons/icon-incorrect";
+import { IconCorrect } from "./icons/icon-correct";
 
 interface IconButtonProps extends React.ComponentProps<"button"> {
     icon?: React.ComponentType<IconProps>;
@@ -12,6 +14,7 @@ interface IconButtonProps extends React.ComponentProps<"button"> {
     containerClassName?: string;
     containerVariant?: "default" | "selected" | "success" | "error";
     containerRounded?: "sm" | "md" | "lg" | "full";
+    correct?: boolean;
 }
 
 export function IconButton({
@@ -23,6 +26,7 @@ export function IconButton({
     containerClassName,
     containerVariant = "default",
     containerRounded = "md",
+    correct = undefined,
     className,
     children,
     ...props
@@ -41,11 +45,17 @@ export function IconButton({
                 iconSize={iconSize}
                 iconClassName={iconClassName}
                 textClassName={textClassName}
-                containerClassName={cn("size-10", containerClassName)}
+                containerClassName={cn("size-10 flex-none", containerClassName)}
                 variant={containerVariant}
                 rounded={containerRounded}
             />
             {children}
+            {correct !== undefined &&
+                (correct ? (
+                    <IconCorrect className="fill-green-500 flex-none size-10" />
+                ) : (
+                    <IconIncorrect className="fill-red-500 flex-none size-10" />
+                ))}
         </Button>
     );
 }
