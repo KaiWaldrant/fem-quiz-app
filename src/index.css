@@ -93,6 +93,7 @@ button {
 @utility preset-1-mobile {
     font-size: 5.5rem;
     font-weight: 500;
+    line-height: 100%;
 }
 
 @utility preset-2-medium-mobile {
@@ -124,6 +125,7 @@ button {
 @utility preset-1 {
     font-size: 9rem;
     font-weight: 500;
+    line-height: 100%;
 }
 
 @utility preset-2-medium {

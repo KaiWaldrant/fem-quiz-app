@@ -1,17 +1,5 @@
 import { ThemeToggle } from "./theme-toggle";
-import { LogoHTML } from "./logo/logo-html";
-import { LogoCSS } from "./logo/logo-css";
-import { LogoJS } from "./logo/logo-js";
-import { LogoAccessibility } from "./logo/logo-accessibility";
-
-export type LogoType = "HTML" | "CSS" | "JavaScript" | "Accessibility";
-
-const LOGOS: Record<LogoType, React.ReactElement> = {
-    HTML: <LogoHTML />,
-    CSS: <LogoCSS />,
-    JavaScript: <LogoJS />,
-    Accessibility: <LogoAccessibility />,
-};
+import { Logo, type LogoType } from "./logo";
 
 interface HeaderProps {
     logo?: LogoType;
@@ -20,7 +8,7 @@ interface HeaderProps {
 export function Header({ logo }: HeaderProps) {
     return (
         <header className="flex justify-between px-6 py-4">
-            {logo && LOGOS[logo]}
+            {logo && <Logo type={logo} />}
             <ThemeToggle />
         </header>
     );

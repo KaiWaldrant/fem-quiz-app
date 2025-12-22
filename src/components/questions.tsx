@@ -4,9 +4,16 @@ import { Button } from "@/components/ui/button";
 import type { Quiz } from "@/types/quiz";
 import { useState } from "react";
 import { IconError } from "@/components/icons/icon-error";
-import { Header, type LogoType } from "./header";
+import { Header } from "./header";
+import type { LogoType } from "./logo";
 
-export function Questions({ quiz }: { quiz: Quiz; onBack: () => void }) {
+export function Questions({
+    quiz,
+    onQuizComplete,
+}: {
+    quiz: Quiz;
+    onQuizComplete: (score: number) => void;
+}) {
     const questions = quiz.questions;
     const lengthOfQs = questions.length;
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
@@ -25,8 +32,11 @@ export function Questions({ quiz }: { quiz: Quiz; onBack: () => void }) {
     };
 
     const checkAnswer = (answer: string, option: string | null) => {
-        setIsCorrect(answer === option);
-        setCountCorrect(isCorrect ? countCorrect + 1 : 0);
+        const correct = answer === option;
+        setIsCorrect(correct);
+        if (correct) {
+            setCountCorrect((prevCount) => prevCount + 1);
+        }
     };
 
     const setButtonClass = (option: string) => {
@@ -71,7 +81,11 @@ export function Questions({ quiz }: { quiz: Quiz; onBack: () => void }) {
     };
 
     const handleNextQuestion = () => {
-        setCurrentQuestionIndex(currentQuestionIndex + 1);
+        const nextIndex = currentQuestionIndex + 1;
+        if (nextIndex === lengthOfQs) {
+            onQuizComplete(countCorrect);
+        }
+        setCurrentQuestionIndex(nextIndex);
         setIsCorrect(false);
         setIsSubmitted(false);
         setSelectedAnswer(null);
