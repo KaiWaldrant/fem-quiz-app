@@ -34,7 +34,7 @@ export function IconButton({
     return (
         <Button
             className={cn(
-                "flex align-left gap-4 p-4 rounded-xl min-h-fit",
+                "flex align-left gap-4 p-4 rounded-xl min-h-fit whitespace-normal wrap-break-word",
                 className,
             )}
             {...props}
