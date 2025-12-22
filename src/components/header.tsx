@@ -1,5 +1,6 @@
 import { ThemeToggle } from "./theme-toggle";
 import { Logo, type LogoType } from "./logo";
+import { Divide } from "lucide-react";
 
 interface HeaderProps {
     logo?: LogoType;
@@ -7,9 +8,9 @@ interface HeaderProps {
 
 export function Header({ logo }: HeaderProps) {
     return (
-        <header className="flex justify-between px-6 py-4">
-            {logo && <Logo type={logo} />}
-            <ThemeToggle />
+        <header className="flex px-6 py-4">
+            {logo !== undefined ? <Logo type={logo} /> : ""}
+            <ThemeToggle className="ml-auto" />
         </header>
     );
 }

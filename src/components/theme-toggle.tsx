@@ -2,13 +2,14 @@ import { Switch } from "./ui/switch";
 import { useTheme } from "./theme-provider";
 import { IconMoon } from "./icons/icon-moon";
 import { IconSun } from "./icons/icon-sun";
+import { cn } from "@/lib/utils";
 
-export function ThemeToggle() {
+export function ThemeToggle({ className }: { className: string }) {
     const { theme, setTheme } = useTheme();
     const isDark = theme === "dark";
 
     return (
-        <div className="flex gap-2 items-center">
+        <div className={cn("flex gap-2 items-center", className)}>
             <IconSun className="size-4 dark:fill-white  fill-grey-500 }" />
 
             <Switch
