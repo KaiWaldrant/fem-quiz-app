@@ -6,7 +6,7 @@ import { useState } from "react";
 import { IconError } from "@/components/icons/icon-error";
 import { Header, type LogoType } from "./header";
 
-export function Questions({ quiz }: { quiz: Quiz }) {
+export function Questions({ quiz }: { quiz: Quiz; onBack: () => void }) {
     const questions = quiz.questions;
     const lengthOfQs = questions.length;
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
