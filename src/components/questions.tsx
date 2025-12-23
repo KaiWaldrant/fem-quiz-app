@@ -5,6 +5,7 @@ import type { Quiz } from "@/types/quiz";
 import { useState } from "react";
 import { IconError } from "@/components/icons/icon-error";
 import { Header } from "./header";
+import { Main } from "./main";
 import type { LogoType } from "./logo";
 
 export function Questions({
@@ -96,13 +97,13 @@ export function Questions({
     return (
         <>
             <Header logo={quiz.title as LogoType} />
-            <main className="grid gap-10 max-tablet:px-6 max-tablet:py-8 tablet:max-w-160 ">
-                <section className="grid gap-6">
-                    <div className="grid gap-4">
-                        <div className="preset-5-mobile italic text-grey-500">
+            <Main>
+                <section className="grid content-start gap-6 tablet:gap-10">
+                    <div className="grid gap-4 tablet:gap-6">
+                        <div className="preset-5-mobile tablet:preset-6 italic text-grey-500">
                             Question {currentQuestionIndex + 1} of {lengthOfQs}
                         </div>
-                        <h2 className="preset-3-mobile">
+                        <h2 className="preset-3-mobile tablet:preset-3">
                             {currentQuestion.question}
                         </h2>
                     </div>
@@ -116,46 +117,56 @@ export function Questions({
                     </div>
                 </section>
 
-                <section className="grid gap-4">
-                    <IconButton
-                        className={setButtonClass(options[0])}
-                        containerVariant={setIconContainerVariant(options[0])}
-                        correct={showCorrect(options[0])}
-                        text="A"
-                        onClick={() => setSelectedAnswer(options[0])}
-                    >
-                        <div className="grow text-left">{options[0]}</div>
-                    </IconButton>
-                    <IconButton
-                        className={setButtonClass(options[1])}
-                        containerVariant={setIconContainerVariant(options[1])}
-                        correct={showCorrect(options[1])}
-                        text="B"
-                        onClick={() => setSelectedAnswer(options[1])}
-                    >
-                        <div className="grow text-left">{options[1]}</div>
-                    </IconButton>
-                    <IconButton
-                        className={setButtonClass(options[2])}
-                        containerVariant={setIconContainerVariant(options[2])}
-                        correct={showCorrect(options[2])}
-                        text="C"
-                        onClick={() => setSelectedAnswer(options[2])}
-                    >
-                        <div className="grow text-left">{options[2]}</div>
-                    </IconButton>
-                    <IconButton
-                        className={setButtonClass(options[3])}
-                        containerVariant={setIconContainerVariant(options[3])}
-                        correct={showCorrect(options[3])}
-                        text="D"
-                        onClick={() => setSelectedAnswer(options[3])}
-                    >
-                        <div className="grow text-left">{options[3]}</div>
-                    </IconButton>
+                <section className="grid gap-4 tablet:gap-6">
+                    <div className="grid gap-4 tablet:gap-6">
+                        <IconButton
+                            className={setButtonClass(options[0])}
+                            containerVariant={setIconContainerVariant(
+                                options[0],
+                            )}
+                            correct={showCorrect(options[0])}
+                            text="A"
+                            onClick={() => setSelectedAnswer(options[0])}
+                        >
+                            <div className="grow text-left">{options[0]}</div>
+                        </IconButton>
+                        <IconButton
+                            className={setButtonClass(options[1])}
+                            containerVariant={setIconContainerVariant(
+                                options[1],
+                            )}
+                            correct={showCorrect(options[1])}
+                            text="B"
+                            onClick={() => setSelectedAnswer(options[1])}
+                        >
+                            <div className="grow text-left">{options[1]}</div>
+                        </IconButton>
+                        <IconButton
+                            className={setButtonClass(options[2])}
+                            containerVariant={setIconContainerVariant(
+                                options[2],
+                            )}
+                            correct={showCorrect(options[2])}
+                            text="C"
+                            onClick={() => setSelectedAnswer(options[2])}
+                        >
+                            <div className="grow text-left">{options[2]}</div>
+                        </IconButton>
+                        <IconButton
+                            className={setButtonClass(options[3])}
+                            containerVariant={setIconContainerVariant(
+                                options[3],
+                            )}
+                            correct={showCorrect(options[3])}
+                            text="D"
+                            onClick={() => setSelectedAnswer(options[3])}
+                        >
+                            <div className="grow text-left">{options[3]}</div>
+                        </IconButton>
+                    </div>
                     <Button
                         variant={"submit"}
-                        className={`p-4 rounded-xl justify-center min-h-fit ${notSelected ? "white-overlay" : ""}`}
+                        className={`p-4 tablet:p-8 rounded-xl tablet:rounded-3xl justify-center min-h-fit ${notSelected ? "white-overlay" : ""}`}
                         onClick={
                             submitText == "Next Question"
                                 ? handleNextQuestion
@@ -165,7 +176,7 @@ export function Questions({
                         {submitText}
                     </Button>
                     <div
-                        className="flex gap-2 justify-center items-center text-red-500 preset-4-mobile tablet:preset-4"
+                        className="flex gap-2 justify-center items-center text-red-500 dark:text-white preset-4-mobile tablet:preset-5-regular"
                         aria-live="polite"
                     >
                         {notSelected ? (
@@ -174,7 +185,7 @@ export function Questions({
                         <p>{notSelected}</p>
                     </div>
                 </section>
-            </main>
+            </Main>
         </>
     );
 }

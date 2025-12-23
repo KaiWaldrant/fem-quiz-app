@@ -9,7 +9,7 @@ export function ThemeToggle({ className }: { className: string }) {
     const isDark = theme === "dark";
 
     return (
-        <div className={cn("flex gap-2 items-center", className)}>
+        <div className={cn("flex gap-2 tablet:gap-4 items-center", className)}>
             <IconSun className="size-4 tablet:size-6 dark:fill-white  fill-grey-500 }" />
 
             <Switch

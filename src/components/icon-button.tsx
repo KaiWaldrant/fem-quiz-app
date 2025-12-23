@@ -45,16 +45,19 @@ export function IconButton({
                 iconSize={iconSize}
                 iconClassName={iconClassName}
                 textClassName={textClassName}
-                containerClassName={cn("flex-none", containerClassName)}
+                containerClassName={cn(
+                    "flex-none size-10 tablet:size-14",
+                    containerClassName,
+                )}
                 variant={containerVariant}
                 rounded={containerRounded}
             />
             {children}
             {correct !== undefined &&
                 (correct ? (
-                    <IconCorrect className="fill-green-500 flex-none size-10" />
+                    <IconCorrect className="fill-green-500 flex-none size-10 tablet:size-14" />
                 ) : (
-                    <IconIncorrect className="fill-red-500 flex-none size-10" />
+                    <IconIncorrect className="fill-red-500 flex-none size-10 tablet:size-14" />
                 ))}
         </Button>
     );
