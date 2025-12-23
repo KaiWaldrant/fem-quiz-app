@@ -96,7 +96,7 @@ export function Questions({
     return (
         <>
             <Header logo={quiz.title as LogoType} />
-            <main className="grid gap-10 px-6 py-8 ">
+            <main className="grid gap-10 max-tablet:px-6 max-tablet:py-8 tablet:max-w-160 ">
                 <section className="grid gap-6">
                     <div className="grid gap-4">
                         <div className="preset-5-mobile italic text-grey-500">
@@ -165,7 +165,7 @@ export function Questions({
                         {submitText}
                     </Button>
                     <div
-                        className="flex gap-2 justify-center items-center text-red-500 preset-4-mobile md:preset-4"
+                        className="flex gap-2 justify-center items-center text-red-500 preset-4-mobile tablet:preset-4"
                         aria-live="polite"
                     >
                         {notSelected ? (

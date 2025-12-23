@@ -10,7 +10,7 @@ export function ThemeToggle({ className }: { className: string }) {
 
     return (
         <div className={cn("flex gap-2 items-center", className)}>
-            <IconSun className="size-4 dark:fill-white  fill-grey-500 }" />
+            <IconSun className="size-4 tablet:size-6 dark:fill-white  fill-grey-500 }" />
 
             <Switch
                 checked={isDark}
@@ -18,10 +18,10 @@ export function ThemeToggle({ className }: { className: string }) {
                     setTheme(checked ? "dark" : "light")
                 }
                 aria-label="Toggle theme"
-                className="bg-purple-600"
+                className="bg-purple-600 tablet:w-12 h-full"
             />
 
-            <IconMoon className="size-4 fill-grey-500 dark:fill-white" />
+            <IconMoon className="size-4 tablet:size-6 fill-grey-500 dark:fill-white" />
         </div>
     );
 }

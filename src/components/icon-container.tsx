@@ -53,7 +53,7 @@ export function IconContainer({
             {text && (
                 <span
                     className={cn(
-                        "preset-4-mobile md:text-preset4",
+                        "preset-4-mobile tablet:text-preset4",
                         textClassName,
                     )}
                 >

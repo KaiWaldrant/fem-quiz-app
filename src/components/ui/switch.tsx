@@ -19,10 +19,11 @@ function Switch({
             {...props}
         >
             {/*Change: remove bg-background dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground*/}
+            {/*Change: add tablet:size-6*/}
             <SwitchPrimitive.Thumb
                 data-slot="switch-thumb"
                 className={cn(
-                    "bg-white pointer-events-none block size-4 rounded-full ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0",
+                    "bg-white pointer-events-none block size-4 tablet:size-6 rounded-full ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0",
                 )}
             />
         </SwitchPrimitive.Root>

@@ -34,7 +34,7 @@ export function IconButton({
     return (
         <Button
             className={cn(
-                "flex align-left gap-4 p-4 rounded-xl min-h-fit whitespace-normal wrap-break-word",
+                "flex align-left gap-4 tablet:gap-8 p-4 rounded-xl tablet:rounded-3xl min-h-fit whitespace-normal wrap-break-word",
                 className,
             )}
             {...props}
@@ -45,7 +45,7 @@ export function IconButton({
                 iconSize={iconSize}
                 iconClassName={iconClassName}
                 textClassName={textClassName}
-                containerClassName={cn("size-10 flex-none", containerClassName)}
+                containerClassName={cn("flex-none", containerClassName)}
                 variant={containerVariant}
                 rounded={containerRounded}
             />

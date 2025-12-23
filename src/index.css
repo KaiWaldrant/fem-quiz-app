@@ -44,6 +44,12 @@
     --color-orange-500: hsl(22, 100%, 60%);
 
     --color-red-500: hsl(0, 82%, 63%);
+
+    /*Use  custom breakpoints*/
+    --breakpoint-*: initial;
+    --breakpoint-mobile: 23.4375rem;
+    --breakpoint-tablet: 48rem;
+    --breakpoint-desktop: 90rem;
 }
 
 @layer base {
@@ -99,11 +105,13 @@ button {
 @utility preset-2-medium-mobile {
     font-size: 2.5rem;
     font-weight: 500;
+    line-height: 100%;
 }
 
 @utility preset-2-light-mobile {
     font-size: 2.5rem;
     font-weight: 300;
+    line-height: 100%;
 }
 
 @utility preset-3-mobile {
@@ -115,6 +123,7 @@ button {
 @utility preset-4-mobile {
     font-size: 1.125rem;
     font-weight: 500;
+    line-height: 100%;
 }
 
 @utility preset-5-mobile {
@@ -131,11 +140,13 @@ button {
 @utility preset-2-medium {
     font-size: 4rem;
     font-weight: 500;
+    line-height: 100%;
 }
 
 @utility preset-2-light {
     font-size: 4rem;
     font-weight: 300;
+    line-height: 100%;
 }
 
 @utility preset-3 {
@@ -147,6 +158,7 @@ button {
 @utility preset-4 {
     font-size: 1.75rem;
     font-weight: 500;
+    line-height: 100%;
 }
 
 @utility preset-5-medium {
