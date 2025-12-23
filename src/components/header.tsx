@@ -1,6 +1,5 @@
 import { ThemeToggle } from "./theme-toggle";
 import { Logo, type LogoType } from "./logo";
-import { Divide } from "lucide-react";
 
 interface HeaderProps {
     logo?: LogoType;
